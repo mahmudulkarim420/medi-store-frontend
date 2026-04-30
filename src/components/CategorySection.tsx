@@ -15,9 +15,9 @@ const categories = [
 
 export default function CategorySection() {
   return (
-    <section className="py-20 px-6 bg-transparent">
+    <section className="py-24 px-6 bg-transparent">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-[32px] font-bold text-[#4a3c31] mb-12">Shop by Category</h2>
+        <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-primary mb-16 tracking-tight">Shop by <span className="text-secondary">Category</span></h2>
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {categories.map((cat, index) => (
@@ -27,13 +27,13 @@ export default function CategorySection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/40 hover:bg-white/60 transition-all cursor-pointer rounded-2xl p-8 flex flex-col items-center group"
+              className="bg-surface-container-low hover:bg-white hover:shadow-2xl hover:shadow-primary/5 transition-all cursor-pointer rounded-3xl p-8 flex flex-col items-center group border border-outline-variant/30"
             >
-              <div className="w-16 h-16 rounded-full border border-[#4a3c31]/10 flex items-center justify-center mb-6 group-hover:bg-white group-hover:scale-110 transition-all">
-                <cat.icon className="w-8 h-8 text-[#4a3c31]" />
+              <div className="w-20 h-20 rounded-2xl bg-white flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all shadow-sm">
+                <cat.icon className="w-10 h-10 text-primary group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-lg font-bold text-[#4a3c31] mb-1">{cat.name}</h3>
-              <p className="text-sm text-[#4a3c31]/60 font-medium">{cat.items}</p>
+              <h3 className="text-lg font-bold text-primary mb-1 tracking-tight">{cat.name}</h3>
+              <p className="text-xs text-on-surface-variant font-black uppercase tracking-widest">{cat.items}</p>
             </motion.div>
           ))}
         </div>

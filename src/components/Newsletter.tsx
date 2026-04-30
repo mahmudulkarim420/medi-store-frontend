@@ -35,25 +35,25 @@ export default function Newsletter() {
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="flex-1 bg-white/60 rounded-[40px] p-12 md:p-20 flex flex-col justify-center items-center text-center"
+          className="flex-1 bg-surface-container-low rounded-[3rem] p-12 md:p-20 flex flex-col justify-center items-center text-center border border-outline-variant/30"
         >
-          <span className="text-[#4a3c31]/60 font-bold uppercase tracking-wider text-sm mb-4">
+          <span className="text-primary font-black uppercase tracking-widest text-xs mb-6">
             Join our newsletter
           </span>
-          <h2 className="text-[42px] md:text-[54px] font-bold text-[#4a3c31] leading-tight mb-12">
-            Sign Up for an Instant<br />15% Discount
+          <h2 className="text-[42px] md:text-[54px] font-heading font-extrabold text-primary leading-tight mb-12 tracking-tight">
+            Sign Up for an <span className="text-secondary">Instant 15%</span> Discount
           </h2>
 
           <div className="w-full max-w-md flex flex-col sm:flex-row gap-4">
-            <div className="relative flex-1">
-              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#4a3c31]/40" />
+            <div className="relative flex-1 group">
+              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-on-surface-variant group-focus-within:text-primary transition-colors" />
               <input 
                 type="email" 
                 placeholder="Enter Email"
-                className="w-full bg-[#efe9e0]/50 border border-[#4a3c31]/10 rounded-2xl py-4 pl-12 pr-4 outline-none focus:bg-white transition-all text-[#4a3c31] font-medium"
+                className="w-full bg-white border border-outline-variant/30 rounded-2xl py-4 pl-12 pr-4 outline-none focus:ring-4 focus:ring-primary/5 focus:border-primary transition-all text-primary font-medium"
               />
             </div>
-            <button className="bg-[#4a3c31] text-white px-10 py-4 rounded-2xl font-bold hover:bg-[#3a2e25] transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+            <button className="bg-primary text-on-primary px-10 py-4 rounded-2xl font-bold hover:shadow-xl hover:shadow-primary/20 transition-all flex items-center justify-center gap-2 whitespace-nowrap active:scale-95">
               Sign up
             </button>
           </div>

@@ -46,11 +46,11 @@ const instagramPosts = [
 
 export default function InstagramSection() {
   return (
-    <section className="py-20 px-6 bg-transparent">
+    <section className="py-24 px-6 bg-transparent">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-[32px] font-bold text-[#4a3c31] mb-12">Follow us @medifit</h2>
+        <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-primary mb-16 tracking-tight">Follow us <span className="text-secondary">@medifit</span></h2>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
           {instagramPosts.map((post, index) => (
             <motion.div
               key={post.id}
@@ -60,18 +60,18 @@ export default function InstagramSection() {
               viewport={{ once: true }}
               className="relative group cursor-pointer aspect-[3/4] md:aspect-auto"
             >
-              <div className={`relative w-full h-[350px] overflow-hidden ${post.shape} border border-[#4a3c31]/10 shadow-lg`}>
+              <div className={`relative w-full h-[400px] overflow-hidden ${post.shape} border border-outline-variant/30 shadow-2xl shadow-primary/5`}>
                 <Image
                   src={post.image}
                   alt={`Instagram post ${post.id}`}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-[#4a3c31]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <div className="bg-white/90 p-4 rounded-full">
-                    <InstagramIcon className="w-6 h-6 text-[#4a3c31]" />
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                  <div className="bg-white p-5 rounded-2xl shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <InstagramIcon className="w-8 h-8 text-primary" />
                   </div>
                 </div>
               </div>

@@ -36,7 +36,7 @@ const promos = [
 export default function PromoSection() {
   return (
     <section className="py-12 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {promos.map((promo, index) => (
           <motion.div
             key={promo.title}
@@ -44,25 +44,24 @@ export default function PromoSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="relative bg-white/40 rounded-3xl p-8 h-[240px] flex flex-col justify-between overflow-hidden group"
+            className="relative bg-surface-container-low rounded-[2rem] p-10 h-[280px] flex flex-col justify-between overflow-hidden group border border-outline-variant/30 hover:shadow-2xl hover:shadow-primary/5 transition-all"
           >
             <div className="z-10 relative">
-              <span className={`${promo.tagColor} text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase mb-4 inline-block`}>
+              <span className={`${promo.tagColor} text-white text-[10px] font-black px-3 py-1 rounded-full uppercase mb-4 inline-block tracking-widest`}>
                 {promo.tag}
               </span>
-              <h3 className="text-xl font-bold text-[#4a3c31] max-w-[160px] leading-tight mb-4 group-hover:text-[#2d211b] transition-colors">
+              <h3 className="text-2xl font-heading font-extrabold text-primary max-w-[180px] leading-tight mb-6 tracking-tight group-hover:text-secondary transition-colors">
                 {promo.title}
               </h3>
-              <button className="flex items-center gap-2 text-sm font-bold text-[#4a3c31] border-b border-[#4a3c31] pb-0.5 hover:gap-3 transition-all">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-                </svg>
+              <button className="flex items-center gap-2 text-xs font-black text-primary uppercase tracking-widest border-b-2 border-secondary pb-1 hover:gap-4 transition-all">
                 {promo.linkText}
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="m9 18 6-6-6-6"/>
+                </svg>
               </button>
             </div>
             
-            <div className="absolute right-[-20px] bottom-[-20px] w-48 h-48 group-hover:scale-110 transition-transform duration-500">
-               {/* Note: User needs to ensure images are moved to @/assets/ or update these paths */}
+            <div className="absolute right-[-10px] bottom-[-10px] w-52 h-52 group-hover:scale-110 transition-transform duration-700">
                <Image 
                  src={promo.image} 
                  alt={promo.title} 

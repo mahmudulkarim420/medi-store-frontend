@@ -46,11 +46,11 @@ const products = [
 
 export default function LatestProducts() {
   return (
-    <section className="py-20 px-6">
+    <section className="py-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-[32px] font-bold text-[#4a3c31] text-center mb-16">Latest health product</h2>
+        <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-primary text-center mb-20 tracking-tight">Latest Health <span className="text-secondary">Products</span></h2>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {products.map((product, index) => (
             <motion.div
               key={product.name}
@@ -60,28 +60,28 @@ export default function LatestProducts() {
               viewport={{ once: true }}
               className="flex flex-col group"
             >
-              <div className="bg-white/40 rounded-3xl p-10 aspect-square relative mb-6 flex items-center justify-center overflow-hidden">
+              <div className="bg-surface-container-low rounded-[2.5rem] p-12 aspect-square relative mb-8 flex items-center justify-center overflow-hidden transition-all duration-500 group-hover:bg-white group-hover:shadow-2xl group-hover:shadow-primary/5 border border-outline-variant/30">
                 {product.tag && (
-                  <span className="absolute top-4 left-4 bg-[#e47e58] text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase z-10">
+                  <span className="absolute top-6 left-6 bg-secondary text-white text-[10px] font-black px-3 py-1 rounded-full uppercase z-10 tracking-widest">
                     {product.tag}
                   </span>
                 )}
                 
-                <div className="relative w-full h-full group-hover:scale-110 transition-transform duration-500">
+                <div className="relative w-full h-full group-hover:scale-110 transition-transform duration-700 ease-out">
                   <Image src={product.image} alt={product.name} fill className="object-contain" />
                 </div>
                 
-                <button className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-[#efe9e0] text-[#4a3c31] px-6 py-2 rounded-xl flex items-center gap-2 text-sm font-bold opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:bg-white">
+                <button className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-8 py-3 rounded-2xl flex items-center gap-3 text-sm font-bold shadow-xl opacity-0 group-hover:opacity-100 group-hover:bottom-10 transition-all duration-300 active:scale-95">
                   <ShoppingCart className="w-4 h-4" />
-                  Shop now
+                  <span>Shop now</span>
                 </button>
               </div>
               
-              <h3 className="text-lg font-bold text-[#4a3c31] mb-1">{product.name}</h3>
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-bold text-[#4a3c31]">${product.price} {product.currency}</span>
+              <h3 className="text-xl font-bold text-primary mb-2 tracking-tight group-hover:text-secondary transition-colors">{product.name}</h3>
+              <div className="flex items-center gap-3">
+                <span className="text-lg font-black text-primary">${product.price} {product.currency}</span>
                 {product.originalPrice && (
-                  <span className="text-xs text-[#4a3c31]/40 line-through">${product.originalPrice} {product.currency}</span>
+                  <span className="text-sm text-on-surface-variant/40 line-through font-bold">${product.originalPrice} {product.currency}</span>
                 )}
               </div>
             </motion.div>

@@ -40,15 +40,15 @@ export default function Testimonials() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section className="py-20 px-6 bg-transparent">
+    <section className="py-24 px-6 bg-transparent">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
-        <h2 className="text-[32px] font-bold text-[#4a3c31] mb-12 text-center">Our happy clients</h2>
+        <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-primary mb-16 text-center tracking-tight">Our Happy <span className="text-secondary">Clients</span></h2>
         
         {/* Quote Card */}
-        <div className="w-full bg-white/40 backdrop-blur-md border border-[#4a3c31]/5 rounded-[32px] p-10 md:p-16 mb-12 relative overflow-hidden">
-          <Quote className="absolute top-8 left-8 w-20 h-20 text-[#4a3c31]/5 rotate-180" />
+        <div className="w-full bg-surface-container-low border border-outline-variant/30 rounded-[3rem] p-12 md:p-20 mb-16 relative overflow-hidden shadow-2xl shadow-primary/5">
+          <Quote className="absolute top-12 left-12 w-32 h-32 text-primary opacity-5 rotate-180" />
           
-          <div className="relative z-10">
+          <div className="relative z-10 max-w-4xl mx-auto">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}
@@ -58,27 +58,28 @@ export default function Testimonials() {
                 transition={{ duration: 0.3 }}
                 className="text-center"
               >
-                <p className="text-lg md:text-xl text-[#4a3c31]/80 leading-relaxed italic">
+                <p className="text-xl md:text-2xl text-primary/80 leading-relaxed font-medium italic mb-8">
                   "{testimonials[activeTab].content}"
                 </p>
+                <div className="w-12 h-1 bg-secondary mx-auto rounded-full"></div>
               </motion.div>
             </AnimatePresence>
           </div>
         </div>
 
         {/* Client Selectors */}
-        <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+        <div className="flex flex-wrap justify-center gap-6 md:gap-8">
           {testimonials.map((client, index) => (
             <button
               key={client.id}
               onClick={() => setActiveTab(index)}
-              className={`flex items-center gap-4 p-2 pr-6 rounded-2xl transition-all ${
+              className={`flex items-center gap-5 p-3 pr-8 rounded-[2rem] transition-all duration-300 ${
                 activeTab === index 
-                ? 'bg-white shadow-lg ring-1 ring-[#4a3c31]/5' 
-                : 'opacity-60 hover:opacity-100'
+                ? 'bg-white shadow-2xl shadow-primary/10 ring-2 ring-primary/5 scale-110' 
+                : 'bg-surface-container-low/50 opacity-60 hover:opacity-100 hover:bg-white'
               }`}
             >
-              <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#4a3c31]/10">
+              <div className="relative w-14 h-14 rounded-2xl overflow-hidden border-2 border-primary/10">
                 <Image 
                   src={client.avatar} 
                   alt={client.name} 
@@ -87,8 +88,8 @@ export default function Testimonials() {
                 />
               </div>
               <div className="text-left">
-                <h4 className="font-bold text-[#4a3c31] text-sm">{client.name}</h4>
-                <p className="text-[12px] text-[#4a3c31]/60">{client.role}</p>
+                <h4 className="font-bold text-primary text-base tracking-tight">{client.name}</h4>
+                <p className="text-xs font-black text-on-surface-variant uppercase tracking-widest">{client.role}</p>
               </div>
             </button>
           ))}

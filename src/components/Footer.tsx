@@ -25,7 +25,7 @@ const LinkedinIcon = ({ size = 18 }: { size?: number }) => (
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-[#4a3c31]/5 pt-20 pb-10 px-6 relative overflow-hidden">
+    <footer className="bg-white border-t border-outline-variant/30 pt-24 pb-12 px-6 relative overflow-hidden">
       {/* Decorative background element */}
       <div className="absolute bottom-[10%] right-[-100px] opacity-[0.03] pointer-events-none -rotate-12 select-none">
           <Image src={pillsLineArt} alt="Decor" width={400} height={400} />
@@ -36,82 +36,90 @@ export default function Footer() {
           
           {/* Pages Column */}
           <div className="lg:col-span-1">
-            <h4 className="text-lg font-bold text-[#4a3c31] mb-6">Pages</h4>
+            <h4 className="text-xl font-heading font-extrabold text-primary mb-8 tracking-tight">Pages</h4>
             <ul className="space-y-4">
-              <li><Link href="/" className="text-[#4a3c31]/70 hover:text-[#4a3c31] transition-colors font-medium">Home</Link></li>
-              <li><Link href="/shop" className="text-[#4a3c31]/70 hover:text-[#4a3c31] transition-colors font-medium">Shop</Link></li>
-              <li><Link href="/about" className="text-[#4a3c31]/70 hover:text-[#4a3c31] transition-colors font-medium">About</Link></li>
-              <li><Link href="/contact" className="text-[#4a3c31]/70 hover:text-[#4a3c31] transition-colors font-medium">Contact</Link></li>
-              <li><Link href="/blog" className="text-[#4a3c31]/70 hover:text-[#4a3c31] transition-colors font-medium">Blog</Link></li>
-              <li><Link href="/privacy" className="text-[#4a3c31]/70 hover:text-[#4a3c31] transition-colors font-medium">Privacy policy</Link></li>
-              <li><Link href="/faq" className="text-[#4a3c31]/70 hover:text-[#4a3c31] transition-colors font-medium">FAQs</Link></li>
+              <li><Link href="/" className="text-on-surface-variant hover:text-primary transition-colors font-bold text-sm">Home</Link></li>
+              <li><Link href="/shop" className="text-on-surface-variant hover:text-primary transition-colors font-bold text-sm">Shop</Link></li>
+              <li><Link href="/about" className="text-on-surface-variant hover:text-primary transition-colors font-bold text-sm">About</Link></li>
+              <li><Link href="/contact" className="text-on-surface-variant hover:text-primary transition-colors font-bold text-sm">Contact</Link></li>
+              <li><Link href="/blog" className="text-on-surface-variant hover:text-primary transition-colors font-bold text-sm">Blog</Link></li>
+              <li><Link href="/privacy" className="text-on-surface-variant hover:text-primary transition-colors font-bold text-sm">Privacy policy</Link></li>
+              <li><Link href="/faq" className="text-on-surface-variant hover:text-primary transition-colors font-bold text-sm">FAQs</Link></li>
             </ul>
           </div>
 
           {/* Utility Column */}
           <div className="lg:col-span-1">
-            <h4 className="text-lg font-bold text-[#4a3c31] mb-6">Utility</h4>
+            <h4 className="text-xl font-heading font-extrabold text-primary mb-8 tracking-tight">Utility</h4>
             <ul className="space-y-4">
-              <li><Link href="/style-guide" className="text-[#4a3c31]/70 hover:text-[#4a3c31] transition-colors font-medium">Style guide</Link></li>
-              <li><Link href="/instructions" className="text-[#4a3c31]/70 hover:text-[#4a3c31] transition-colors font-medium">Instructions</Link></li>
-              <li><Link href="/changelog" className="text-[#4a3c31]/70 hover:text-[#4a3c31] transition-colors font-medium">Changelog</Link></li>
-              <li><Link href="/licenses" className="text-[#4a3c31]/70 hover:text-[#4a3c31] transition-colors font-medium">Licenses</Link></li>
-              <li><Link href="/links" className="text-[#4a3c31]/70 hover:text-[#4a3c31] transition-colors font-medium">Link in bio</Link></li>
-              <li><Link href="/404" className="text-[#4a3c31]/70 hover:text-[#4a3c31] transition-colors font-medium">Error 404</Link></li>
-              <li><Link href="/password" className="text-[#4a3c31]/70 hover:text-[#4a3c31] transition-colors font-medium">Password protected</Link></li>
+              <li><Link href="/style-guide" className="text-on-surface-variant hover:text-primary transition-colors font-bold text-sm">Style guide</Link></li>
+              <li><Link href="/instructions" className="text-on-surface-variant hover:text-primary transition-colors font-bold text-sm">Instructions</Link></li>
+              <li><Link href="/changelog" className="text-on-surface-variant hover:text-primary transition-colors font-bold text-sm">Changelog</Link></li>
+              <li><Link href="/licenses" className="text-on-surface-variant hover:text-primary transition-colors font-bold text-sm">Licenses</Link></li>
+              <li><Link href="/links" className="text-on-surface-variant hover:text-primary transition-colors font-bold text-sm">Link in bio</Link></li>
+              <li><Link href="/404" className="text-on-surface-variant hover:text-primary transition-colors font-bold text-sm">Error 404</Link></li>
+              <li><Link href="/password" className="text-on-surface-variant hover:text-primary transition-colors font-bold text-sm">Password protected</Link></li>
             </ul>
           </div>
 
           {/* Central Logo Section */}
-          <div className="lg:col-span-1 flex flex-col items-center text-center space-y-6">
-            <div className="flex items-center gap-2">
-              <div className="w-12 h-12 border border-[#4a3c31]/20 rounded-full flex items-center justify-center">
-                <div className="w-10 h-10 bg-[#4a3c31] rounded-full flex items-center justify-center">
-                  <Pill className="text-white w-6 h-6" />
-                </div>
+          <div className="lg:col-span-1 flex flex-col items-center text-center space-y-8">
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20 group-hover:rotate-12 transition-transform">
+                <Pill className="text-white w-8 h-8" />
               </div>
-              <span className="text-2xl font-bold text-[#4a3c31]">Medifit</span>
-            </div>
-            <p className="text-[#4a3c31]/60 text-sm max-w-[200px] leading-relaxed">
+              <span className="text-3xl font-heading font-extrabold text-primary tracking-tight">Medifit</span>
+            </Link>
+            <p className="text-on-surface-variant text-sm max-w-[220px] leading-relaxed font-medium">
               We provide the ultimate solution for your online store and all the healthcare needs.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-9 h-9 rounded-full border border-[#4a3c31]/10 flex items-center justify-center hover:bg-[#4a3c31] hover:text-white transition-all text-[#4a3c31]">
-                <FacebookIcon size={18} />
+              <a href="#" className="w-11 h-11 rounded-xl border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-white transition-all text-primary shadow-sm hover:shadow-lg hover:shadow-primary/20">
+                <FacebookIcon size={20} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full border border-[#4a3c31]/10 flex items-center justify-center hover:bg-[#4a3c31] hover:text-white transition-all text-[#4a3c31]">
-                <InstagramIcon size={18} />
+              <a href="#" className="w-11 h-11 rounded-xl border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-white transition-all text-primary shadow-sm hover:shadow-lg hover:shadow-primary/20">
+                <InstagramIcon size={20} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full border border-[#4a3c31]/10 flex items-center justify-center hover:bg-[#4a3c31] hover:text-white transition-all text-[#4a3c31]">
-                <TwitterIcon size={18} />
+              <a href="#" className="w-11 h-11 rounded-xl border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-white transition-all text-primary shadow-sm hover:shadow-lg hover:shadow-primary/20">
+                <TwitterIcon size={20} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full border border-[#4a3c31]/10 flex items-center justify-center hover:bg-[#4a3c31] hover:text-white transition-all text-[#4a3c31]">
-                <LinkedinIcon size={18} />
+              <a href="#" className="w-11 h-11 rounded-xl border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-white transition-all text-primary shadow-sm hover:shadow-lg hover:shadow-primary/20">
+                <LinkedinIcon size={20} />
               </a>
             </div>
           </div>
 
           {/* Address Column */}
           <div className="lg:col-span-1 flex flex-col items-end text-right">
-            <h4 className="text-lg font-bold text-[#4a3c31] mb-6">Address</h4>
-            <p className="text-[#4a3c31]/70 leading-relaxed">
+            <h4 className="text-xl font-heading font-extrabold text-primary mb-8 tracking-tight">Address</h4>
+            <p className="text-on-surface-variant leading-relaxed font-bold text-sm">
               B, 9140 Parker Rd. Allentown,<br />New Mexico 31134
             </p>
           </div>
 
           {/* Contact Column */}
           <div className="lg:col-span-1 flex flex-col items-end text-right">
-            <h4 className="text-lg font-bold text-[#4a3c31] mb-6">Contact</h4>
-            <a href="mailto:mf.hello@gmail.com" className="text-[#4a3c31]/70 hover:text-[#4a3c31] mb-2 block transition-colors font-medium">mf.hello@gmail.com</a>
-            <a href="tel:+3085550114" className="text-[#4a3c31]/70 hover:text-[#4a3c31] block transition-colors font-medium">(308) 555-0114</a>
+            <h4 className="text-xl font-heading font-extrabold text-primary mb-8 tracking-tight">Contact</h4>
+            <div className="space-y-4">
+              <p className="text-on-surface-variant font-bold text-sm hover:text-primary transition-colors cursor-pointer">
+                contact@medifit.com
+              </p>
+              <p className="text-on-surface-variant font-bold text-sm hover:text-primary transition-colors cursor-pointer">
+                (123) 456 - 7890
+              </p>
+            </div>
           </div>
-
         </div>
 
-        <div className="border-t border-[#4a3c31]/5 pt-8 text-center">
-          <p className="text-[#4a3c31]/40 text-xs">
-            Design by Webestica, Powered by Webflow
+        {/* Bottom Bar */}
+        <div className="border-t border-outline-variant/30 pt-10 flex flex-col md:flex-row justify-between items-center gap-8">
+          <p className="text-xs font-black text-on-surface-variant uppercase tracking-widest">
+            © 2026 Medifit. ALL RIGHTS RESERVED.
           </p>
+          <div className="flex gap-10">
+            <Link href="/privacy" className="text-xs font-black text-on-surface-variant uppercase tracking-widest hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="text-xs font-black text-on-surface-variant uppercase tracking-widest hover:text-primary transition-colors">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>

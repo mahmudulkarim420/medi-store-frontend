@@ -24,8 +24,8 @@ const props = [
 
 export default function ValueProps() {
   return (
-    <section className="py-12 px-6">
-      <div className="max-w-7xl mx-auto bg-white/40 rounded-3xl p-10 flex flex-col md:flex-row items-center justify-between gap-12">
+    <section className="py-16 px-6">
+      <div className="max-w-7xl mx-auto bg-surface-container-low rounded-[2.5rem] p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 border border-outline-variant/30 shadow-2xl shadow-primary/5">
         {props.map((prop, index) => (
           <motion.div
             key={prop.title}
@@ -35,12 +35,12 @@ export default function ValueProps() {
             viewport={{ once: true }}
             className="flex items-center gap-6 group"
           >
-            <div className="w-16 h-16 rounded-full border border-[#4a3c31]/10 flex items-center justify-center group-hover:bg-white transition-all shadow-sm">
-              <prop.icon className="w-8 h-8 text-[#4a3c31]" />
+            <div className="w-20 h-20 rounded-2xl bg-white flex items-center justify-center group-hover:bg-primary transition-all shadow-sm group-hover:scale-110 duration-500">
+              <prop.icon className="w-10 h-10 text-primary group-hover:text-white transition-colors" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-[#4a3c31] mb-1">{prop.title}</h3>
-              <p className="text-sm text-[#4a3c31]/60 font-medium">{prop.desc}</p>
+              <h3 className="text-xl font-bold text-primary mb-2 tracking-tight">{prop.title}</h3>
+              <p className="text-sm text-on-surface-variant font-medium leading-relaxed max-w-[180px]">{prop.desc}</p>
             </div>
           </motion.div>
         ))}

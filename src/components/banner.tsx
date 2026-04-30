@@ -34,16 +34,16 @@ export function Banner() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-6xl md:text-7xl lg:text-[90px] font-bold text-[var(--on-background)] leading-[1.1] mb-8 tracking-tight"
+          className="text-6xl md:text-7xl lg:text-[100px] font-heading font-extrabold text-primary leading-[1] mb-8 tracking-tighter"
         >
-          Your trusted <br /> care now <br /> and always
+          Your trusted <br /> <span className="text-secondary">care now</span> <br /> and always
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="text-[var(--on-surface-variant)] max-w-md text-xl mb-12 leading-relaxed opacity-80"
+          className="text-on-surface-variant max-w-md text-xl mb-12 font-medium leading-relaxed"
         >
           For the best results, align your health needs with your medication plan.
         </motion.p>
@@ -52,16 +52,17 @@ export function Banner() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="bg-[#3d2d25] text-white px-10 py-5 rounded-2xl flex items-center gap-4 hover:bg-[#2d211b] transition-all font-semibold shadow-xl group"
+          onClick={() => window.location.href = '/shop'}
+          className="bg-primary text-on-primary px-12 py-5 rounded-3xl flex items-center gap-4 hover:shadow-2xl hover:shadow-primary/20 transition-all font-bold shadow-xl group active:scale-95"
         >
-          <div className="w-6 h-6 flex items-center justify-center bg-white/10 rounded-lg">
+          <div className="w-6 h-6 flex items-center justify-center bg-white/20 rounded-lg">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
               <path d="M3 6h18" />
               <path d="M16 10a4 4 0 0 1-8 0" />
             </svg>
           </div>
-          <span className="text-lg font-medium">Shop now</span>
+          <span className="text-lg">Shop now</span>
         </motion.button>
       </div>
 

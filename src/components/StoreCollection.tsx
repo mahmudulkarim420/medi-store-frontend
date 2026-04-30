@@ -65,13 +65,13 @@ const products = [
 
 export default function StoreCollection() {
   return (
-    <section className="py-20 px-6">
+    <section className="py-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-[42px] font-bold text-[#4a3c31] text-center mb-16">
-          Explore Our store Collection
+        <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-primary text-center mb-20 tracking-tight">
+          Explore Our Store <span className="text-secondary">Collection</span>
         </h2>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16">
           {products.map((product, index) => (
             <motion.div
               key={product.name}
@@ -81,37 +81,27 @@ export default function StoreCollection() {
               viewport={{ once: true }}
               className="flex flex-col group"
             >
-              <div className="bg-white/60 rounded-3xl p-8 aspect-square relative mb-6 flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:bg-white group-hover:shadow-xl">
-                <div className="relative w-full h-full group-hover:scale-105 transition-transform duration-500">
+              <div className="bg-surface-container-low rounded-[2.5rem] p-10 aspect-square relative mb-8 flex items-center justify-center overflow-hidden transition-all duration-500 group-hover:bg-white group-hover:shadow-2xl group-hover:shadow-primary/5 border border-outline-variant/30">
+                <div className="relative w-full h-full group-hover:scale-110 transition-transform duration-700 ease-out">
                   <Image 
                     src={product.image} 
                     alt={product.name} 
                     fill 
-                    className="object-contain p-4" 
+                    className="object-contain p-2" 
                   />
                 </div>
                 
-                {product.showShopNow && (
-                  <button className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-[#efe9e0] text-[#4a3c31] px-6 py-2 rounded-xl flex items-center gap-2 text-sm font-bold shadow-md hover:bg-white transition-all">
-                    <ShoppingCart className="w-4 h-4" />
-                    Shop now
-                  </button>
-                )}
-
-                {/* Hover overlay for others */}
-                {!product.showShopNow && (
-                   <button className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-[#efe9e0] text-[#4a3c31] px-6 py-2 rounded-xl flex items-center gap-2 text-sm font-bold opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:bg-white">
-                   <ShoppingCart className="w-4 h-4" />
-                   Shop now
-                 </button>
-                )}
+                <button className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-8 py-3 rounded-2xl flex items-center gap-3 text-sm font-bold shadow-xl opacity-0 group-hover:opacity-100 group-hover:bottom-10 transition-all duration-300 active:scale-95">
+                  <ShoppingCart className="w-4 h-4" />
+                  <span>Shop now</span>
+                </button>
               </div>
               
-              <h3 className="text-lg font-bold text-[#4a3c31] mb-1">{product.name}</h3>
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-bold text-[#4a3c31]">${product.price} USD</span>
+              <h3 className="text-xl font-bold text-primary mb-2 tracking-tight group-hover:text-secondary transition-colors">{product.name}</h3>
+              <div className="flex items-center gap-3">
+                <span className="text-lg font-black text-primary">${product.price} USD</span>
                 {product.originalPrice && (
-                  <span className="text-xs text-[#4a3c31]/40 line-through">${product.originalPrice} USD</span>
+                  <span className="text-sm text-on-surface-variant/40 line-through font-bold">${product.originalPrice} USD</span>
                 )}
               </div>
             </motion.div>

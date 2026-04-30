@@ -13,7 +13,7 @@ import pillsLineArt from '@/assets/medical shape 5 1.png'
 
 const Home = () => {
     return (
-        <div className="bg-[#efe9e0] min-h-screen relative overflow-hidden">
+        <div className="bg-white min-h-screen relative overflow-hidden">
             {/* Background Decorative Elements */}
             <div className="absolute top-[20%] right-[-100px] opacity-[0.03] pointer-events-none rotate-12">
                 <Image src={pillsLineArt} alt="Decor" width={600} height={600} />
